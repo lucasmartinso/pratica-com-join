@@ -8,7 +8,13 @@ ORDER BY u.id ASC;
 
 
 --Exercício 2:  
-SELECT t.id,u.name AS writer, u.name AS recipient, t.message FROM users u JOIN testimonials ts ON u.id = ts."recipientId" JOIN testimonials t ON u.id = t."writerId" ORDER BY t.id ASC;
+SELECT t.id,u.name AS writer, u.name AS recipient, t.message 
+FROM users u 
+JOIN testimonials ts 
+ON u.id = ts."recipientId" 
+JOIN testimonials t 
+ON u.id = t."writerId" 
+ORDER BY t.id ASC;
 
 --Exercício 3:
   SELECT u.id, u.name, c.name AS course, s.name AS school, e."endDate" 
