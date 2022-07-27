@@ -8,12 +8,12 @@ ORDER BY u.id ASC;
 
 
 --Exercício 2:  
-SELECT t.id,u.name AS writer, u.name AS recipient, t.message 
-FROM users u 
-JOIN testimonials ts 
-ON u.id = ts."recipientId" 
-JOIN testimonials t 
-ON u.id = t."writerId" 
+SELECT t.id,u1.name AS writer, u2.name AS recipient, t.message 
+FROM testimonials t 
+JOIN users u1 
+ON t."writerId"= u1.id 
+JOIN users u2 
+ON t."recipientId" = u2.id 
 ORDER BY t.id ASC;
 
 --Exercício 3:
