@@ -40,14 +40,14 @@ ORDER BY t.id ASC;
 
   --Bônus: 
   SELECT s.id, s.name AS school, c.name AS course, co.name AS company, r.name AS role
-    FROM educations edu
-    JOIN schools s ON s.id = edu."schoolId"
-    JOIN courses c ON c.id = edu."courseId"
-    JOIN users u ON u.id= edu."userId"
-    JOIN applicants app ON u.id= app."userId"
-    JOIN jobs j ON j.id = app."jobId"
-    JOIN companies co ON co.id = j."companyId"
-    JOIN roles r ON r.id = j."roleId"
-    WHERE r.name = 'Software Engineer' 
-    AND co.id = 10 
-    AND j.active = 'true';
+  FROM educations edu
+  JOIN schools s ON s.id = edu."schoolId"
+  JOIN courses c ON c.id = edu."courseId"
+  JOIN users u ON u.id= edu."userId"
+  JOIN applicants app ON u.id= app."userId"
+  JOIN jobs j ON j.id = app."jobId"
+  JOIN companies co ON co.id = j."companyId"
+  JOIN roles r ON r.id = j."roleId"
+  WHERE r.name = 'Software Engineer' 
+  AND co.id = 10 
+  AND j.active = 'true';
